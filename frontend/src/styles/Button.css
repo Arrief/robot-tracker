@@ -1,0 +1,77 @@
+.btn {
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 10px;
+    padding: 15px;
+    transition: background-color 0.3s, transform 0.1s;
+    width: 100%;
+}
+
+.btn:active {
+    transform: translateY(2px);
+}
+
+.btn-add-robot {
+    background-color: #9c27b0;
+    margin-top: 0;
+    padding: 8px;
+    width: fit-content;
+}
+
+.btn-add-robot:hover {
+    background-color: #7b1fa2;
+}
+
+.btn-robot-history-toggle {
+    background-color: #9c27b0;
+    font-size: 0.9rem;
+    margin-top: 8px;
+    padding: 6px 8px;
+    width: fit-content;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.btn-robot-history-toggle:hover {
+    background-color: #7b1fa2;
+}
+
+.btn-start {
+    background-color: #4caf50;
+}
+
+.btn-start:hover {
+    background-color: #2e7d32;
+}
+
+.btn-stop {
+    background-color: #ed6c02;
+}
+
+.btn-stop:hover {
+    background-color: #e65100;
+}
+
+.btn-single-robot {
+    font-size: 0.9rem;
+    margin: 0;
+    padding: 6px 8px;
+    width: fit-content;
+}
+
+.btn:disabled {
+    background-color: #dcdfdf;
+    cursor: not-allowed;
+}
+
+.btn-logout {
+    margin-top: 0;
+    padding: 12px;
+}

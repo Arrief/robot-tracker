@@ -1,0 +1,47 @@
+version: "3.9"
+
+services:
+    db:
+        image: postgres:14
+        container_name: robot-postgres
+        restart: always
+        environment:
+            POSTGRES_DB: robot_tracker_db
+            POSTGRES_USER: robot_master
+            POSTGRES_PASSWORD: r080M4573rx11
+        ports:
+            - "5432:5432"
+        volumes:
+            - postgres_data:/var/lib/postgresql/data
+            - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+    redis:
+        image: redis:7
+        container_name: robot-redis
+        command: redis-server --requirepass redispassword
+        ports:
+            - "6379:6379"
+
+    api:
+        build: ./backend
+        container_name: robot-api
+        env_file:
+            - ./backend/.env.docker
+        ports:
+            - "3000:3000"
+        depends_on:
+            - db
+            - redis
+
+    frontend:
+        build: ./frontend
+        container_name: robot-frontend
+        env_file:
+            - ./frontend/.env.docker
+        ports:
+            - "5173:5173"
+        depends_on:
+            - api
+
+volumes:
+    postgres_data:

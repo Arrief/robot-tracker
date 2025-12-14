@@ -1,0 +1,74 @@
+:root {
+    box-sizing: border-box;
+    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #242424;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    min-width: 100vw;
+}
+
+h1 {
+    color: #333;
+    font-size: 1.8rem;
+    line-height: 1.1;
+}
+
+input {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    padding: 12px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    width: 100%;
+}
+
+input:focus {
+    border-color: #4caf50;
+    box-shadow: 0 0 0 3px rgba(3, 106, 32, 0.243);
+    outline: none;
+}
+
+input:disabled {
+    background-color: #f0f3f3;
+    cursor: not-allowed;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.error-message {
+    background-color: #fcebeb;
+    border: 1px solid #cc0000;
+    border-radius: 8px;
+    color: #cc0000;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    padding: 10px;
+    text-align: center;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        color: #213547;
+        background-color: #ffffff;
+    }
+}
