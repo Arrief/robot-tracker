@@ -1,5 +1,8 @@
 import db from "../database/db.js";
 
+// const CACHE_TTL = 10;
+// const ROBOTS_CACHE_KEY = "allMyRobots";
+
 // Coordinates for the boundaries of the frontend map
 const LEIPZIG_AREA = {
     WEST: 12.22,
@@ -61,10 +64,17 @@ async function updateRobotPositions(io) {
     try {
         client = await db.connect();
 
+        // let allRobots;
+        // const cachedRobots = await redis.get(REDIS_ROBOTS_KEY);
+
+        // if (cachedRobots) {
+        //     allRobots = JSON.parse(cachedRobots);
+        // } else {
         const allRobotsQuery = await client.query(
             "SELECT * FROM robots ORDER BY id;"
         );
         const allRobots = allRobotsQuery.rows;
+        // }
 
         // Update database
         await client.query("BEGIN");
@@ -126,6 +136,10 @@ async function updateRobotPositions(io) {
         }
 
         await client.query("COMMIT");
+
+        // await redisClient.set(ROBOTS_CACHE_KEY, JSON.stringify(updatedRobots), {
+        //     EX: movingRobots.size === 0 ? CACHE_TTL : undefined,
+        // });
 
         // Websocket broadcast, make sure robots stay in correct order
         updatedRobots.sort((a, b) => a.id - b.id);

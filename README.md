@@ -1,5 +1,9 @@
 # Robot Tracker
 
+# Einleitung
+
+Robot Tracker ist ein Demo Projekt: eine Simulation von konstanter Bewegung findet auf dem Backend statt, Daten werden mit Redis gecached und die aktuellen Positionsdaten mit einer WebSocket Verbindung an den Client geschickt. Im Frontend werden alle aktuellen Positionen auf einer Karte dargestellt und die Simulation steuerbar gemacht.
+
 ## Installation
 
 ```
@@ -16,13 +20,13 @@ Das Frontend ist eine klassische **React** SPA mit **React Router**, Vanilla Jav
 
 ## Features:
 
--   Login (Testnutzer aus Aufgabenstellung ist angelegt)
--   Dashboard mit Header, OpenLayers Karte und Robotern als Marker
--   Sidebar mit Übersicht der Roboter-Daten und Buttons für folgende Aktionen:
-    -   Erstellen eines neuen Roboters
-    -   Bewegen und stoppen aller Roboter
-    -   Bewegen und stoppen individueller Roboter
-    -   Anzeigen eines Logs mit den 10 letzten Positionen
+- Login (E-Mail: **admin@test.com**, Passwort: **test123**)
+- Dashboard mit Header, OpenLayers Karte und Robotern als Marker
+- Sidebar mit Übersicht der Roboter-Daten und Buttons für folgende Aktionen:
+    - Erstellen eines neuen Roboters
+    - Bewegen und stoppen aller Roboter
+    - Bewegen und stoppen individueller Roboter
+    - Anzeigen eines Logs mit den 10 letzten Positionen
 
 ![Robot Tracker Login Screen](./screenshots/robot-tracker-login.png)
 

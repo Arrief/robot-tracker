@@ -126,11 +126,6 @@ function Dashboard() {
     }
 
     useEffect(() => {
-        if (!token || token === "undefined" || token === "null") {
-            navigate("/login");
-            return;
-        }
-
         // Request robot data from backend
         async function fetchRobots() {
             try {
