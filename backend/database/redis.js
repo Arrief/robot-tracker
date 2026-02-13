@@ -10,10 +10,10 @@ const redisClient = createClient({
             if (retries > 10) {
                 console.error("Redis Verbindunsversuche erschöpft.");
                 return new Error(
-                    "Redis Verbindung nach 10 Versuchen Fehlgeschlagen."
+                    "Redis Verbindung nach 10 Versuchen Fehlgeschlagen.",
                 );
             }
-            console.log(`🔁 Redis Verbindungsversuch ${retries} von 10`);
+            console.log(`Redis Verbindungsversuch ${retries} von 10`);
             return 3000;
         },
     },

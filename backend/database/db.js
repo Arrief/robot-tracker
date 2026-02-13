@@ -8,7 +8,7 @@ const pool = new Pool({
     port: process.env.DB_PORT,
 });
 
-/* Too strict for Docker:
+/* Too strict for Docker, use docker compose healthcheck instead:
 pool.connect((error, _client, release) => {
     if (error) {
         console.error("Verbindung zur Datenbank fehlgeschlagen: ", error);

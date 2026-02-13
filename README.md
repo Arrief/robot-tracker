@@ -6,6 +6,8 @@ Robot Tracker ist ein Demo Projekt: eine Simulation von konstanter Bewegung find
 
 ## Installation
 
+Voraussetzung: Docker und Git müssen installiert sein. Dann einfach folgenden Befehle im Terminal ausführen:
+
 ```
 git clone https://gitlab.com/arrief/robot-tracker.git
 cd robot-tracker
@@ -13,6 +15,17 @@ docker compose up --build
 ```
 
 Das Frontend läuft auf `http://localhost:5173`, die API auf Port `3000`, Postgres DB auf `5432` und Redis auf `6379`.
+
+Unter `http://localhost:5173` kann die App genutzt werden.
+
+Wenn die App beendet werden und alle Daten beibehalten werden sollen, im Terminal folgenden Befehl ausführen:
+`docker compose down`
+
+Für das nächste Mal zum Starten folgenden Befehl ausführen:
+`docker compose up`
+
+Sollen die Daten dagegen auf Anfang zurückgesetzt werden (danach ist beim Starten mit "compose up" wieder die `--build` flag notwendig):
+`docker compose down -v`
 
 ## Architektur
 
@@ -27,6 +40,17 @@ Das Frontend ist eine klassische **React** SPA mit **React Router**, Vanilla Jav
     - Bewegen und stoppen aller Roboter
     - Bewegen und stoppen individueller Roboter
     - Anzeigen eines Logs mit den 10 letzten Positionen
+
+## Tools
+
+- React
+- JavaScript
+- Node.js & Express.js
+- PostgreSQL
+- Redis
+- WebSocket
+- Docker
+- Vite
 
 ![Robot Tracker Login Screen](./screenshots/robot-tracker-login.png)
 
