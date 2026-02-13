@@ -74,7 +74,7 @@ async function updateRobotPositions(io) {
             const allRobotsQuery = await client.query(
                 "SELECT * FROM robots ORDER BY id;",
             );
-            const allRobots = allRobotsQuery.rows;
+            allRobots = allRobotsQuery.rows;
         }
 
         // Update database
