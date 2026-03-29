@@ -9,7 +9,7 @@ Robot Tracker ist ein Demo Projekt: eine Simulation von konstanter Bewegung find
 Voraussetzung: Docker und Git müssen installiert sein. Dann einfach folgenden Befehle im Terminal ausführen:
 
 ```
-git clone https://gitlab.com/arrief/robot-tracker.git
+git clone https://github.com/Arrief/robot-tracker.git
 cd robot-tracker
 docker compose up --build
 ```
